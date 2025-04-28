@@ -18,7 +18,7 @@
 	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-    <title>Terms & Conditions - Mark</title>
+    <title>curriculum vitae - Ramdas Ware</title>
     
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,6 +29,419 @@
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
+<style>
+
+:root {
+	--color-gray-light-1: #f8f8f8;
+	--color-gray-light-2: #e9e9e9;
+	--color-gray-light-3: #dedede;
+	--color-gray-dark-1: #545454;
+	--color-gray-dark-2: #737373;
+	--color-gray-dark-3: #9a9a9a;
+	--color-blue-dark-1: #00387f;
+	--color-tiffany: #00a6a6;
+	--profile-theme: #4682bf;
+	--timeline-circle-theme: #14253e;
+	
+	--pgbar-length: 100%;
+
+	--MATH-PI: 3.1415px;
+	--percent: 100;
+}
+
+html {
+	font-size: 100%;
+    font-family: 'PT Sans', sans-serif;
+
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 70rem;
+	background-color: var(--color-gray-light-2);
+	display: flex;
+	box-shadow: 0px 0px 15px 4px #b3b3b3;
+}
+
+.intro {
+	flex: 0 0 250px;
+	background-color: var(--color-gray-light-1);
+	box-shadow: 5px 0px 15px 0px #b3b3b3;
+	z-index: 5;
+}
+.profile {
+	position: relative;
+	background-color: var(--profile-theme);
+	padding: 2rem 1rem;
+	margin-bottom: 50px;
+	text-align: center;
+	user-select: none;
+}
+.profile::after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: -15px;
+	width: 100%;
+	height: 30px;
+	background-color: var(--profile-theme);
+	transform: skewY(-5deg);
+}
+.photo img {
+	width: 80%;
+	border-radius: 50%;
+}
+.bio .name {
+	font-size: 1.5rem;
+	text-align: center;
+	color: var(--color-gray-light-1);
+	margin: 0;
+	margin-top: 1rem;
+}
+.bio .profession {
+	font-size: 1rem;
+	text-align: center;
+	color: var(--color-gray-light-1);
+	margin: 0;
+}
+
+.intro-section {
+	padding: 0 1rem;
+	color: var(--color-gray-dark-1);
+}
+.intro-section .title {
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.about .paragraph {
+	text-align: justify;
+}
+.info-section {
+	margin: 1rem 0;
+}
+.info-section span {
+	position: relative;
+	transition: all 0.3s;
+}
+.info-section i {
+	color: var(--profile-theme);
+	width: 20px;
+	height: 20px;
+}
+
+.link a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.link span::after {
+	position: absolute;
+	content: '';
+	left: 50%;
+	bottom: -3px;
+	width: 0;
+	height: 2px;
+	background-color: var(--profile-theme);
+	transition: width 0.3s;
+	/*transition-timing-function: cubic-bezier(.64,.51,.16,.86);*/
+	transition-timing-function: cubic-bezier(.92,.57,.33,1.02);
+	transform: translate(-50%, 0);
+}
+
+.link span:hover {
+	color: var(--profile-theme);
+}
+.link span:hover::after {
+	width: 100%;
+}
+
+/* Detail section overall setting*/
+.detail {
+	flex: 1 0 0;
+	background-color: white;
+	padding: 2rem;
+}
+.detail:hover > .detail-section:not(:hover) {
+	opacity: 0.3;
+}
+.detail-section {
+	transition: all 0.3s;
+}
+.detail-section:not(:last-of-type) {
+	padding-bottom: 1rem;
+}
+.detail-title {
+	display: flex;
+	align-items: center;
+}
+.detail-section > .detail-content {
+	padding: 1.5rem;
+	padding-left: 2rem;
+	user-select: none;
+}
+.detail-section > .detail-content p{
+    font: 400 .6rem / 1rem "Open Sans", sans-serif !important;
+}
+.detail-section.edu > .detail-content {
+	padding-left: calc(1.5rem + 10px);
+}
+.title-icon + span {
+	font-size: 1.5rem;
+	transition: all 0.3s;
+}
+.title-icon {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin-right: 1rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	background-color: var(--profile-theme);
+	border-radius: 50%;
+	transition: all 0.3s;
+}
+.title-icon i {
+	color: white;
+	line-height: 1rem;
+	font-size: 1rem;
+	text-align: center;
+}
+.detail-section:hover .title-icon {
+	transform: scale(1.5);
+	margin-right: 1.5rem;
+}
+.detail-section:hover .title-icon + span {
+	letter-spacing: 1.5px;
+}
+
+/* time line block in education section */
+.timeline-block {
+	position: relative;
+	padding-left: 30px;
+}
+.timeline-block:not(:last-of-type) {
+	margin-bottom: 1rem;	
+}
+.timeline-block h1 {
+	font-size: 1rem;
+	margin: 5px 0;
+	transition: all 0.3s;
+}
+.timeline-block p {
+	font-size: 0.8rem;
+	margin: 5px 0;
+}
+.timeline-block time {
+	font-size: 0.8rem;
+	color: var(--color-gray-dark-2);
+}
+.timeline-block::before {
+	position: absolute;
+	content: '';
+	width: 15px;
+	height: 15px;
+	background-color: white;
+	border: 3px solid var(--timeline-circle-theme);
+	border-radius: 50%;
+	left: -10px;
+	top: -5px;
+}
+.timeline-block::after {
+	position: absolute;
+	content: '';
+	width: 3px;
+	height: 100%;
+	background-color: var(--timeline-circle-theme);
+	left: -1px;
+	top: 13px;
+}
+.timeline-block:hover h1 {
+	color: var(--color-tiffany);
+}
+.timeline-block:hover::before {
+	animation: circle 1.2s infinite;
+}
+
+/* Programming skills section */
+.pg-list, .tool-list, .favor-list {
+	padding: 0;
+	list-style: none;
+}
+.pg-list > li {	
+	margin: 1rem 0;
+	display: flex;
+	align-items: center;
+}
+.sb-skeleton {
+	position: relative;
+	flex: 1 0 auto;
+	height: 2px;
+	background-color: var(--color-gray-dark-3);
+}
+.pg-list > li > span {
+	flex: 0 0 100px;
+}
+.sb-skeleton > .skillbar {
+	position: absolute;
+	left: 0;
+	top: -1px;
+	width: var(--pgbar-length);
+	height: 4px;
+	background-color: var(--profile-theme);
+}
+.tool-list {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+}
+.tool-list > li {
+	position: relative;
+	text-align: center;
+	flex: 0 0 25%;
+}
+.tool-list > li > svg {
+	position: relative;
+	fill: transparent;
+	width: 95%;
+	transform: rotate(-90deg);
+}
+.tool-list > li > svg > circle {
+	stroke-width: 1px;
+	stroke: #cdcdcd;
+}
+.tool-list > li > svg > circle.cbar {
+	stroke-width: 3px;
+	stroke: var(--profile-theme);
+	stroke-linecap: round;
+	stroke-dashoffset: 0;
+	stroke-dasharray: calc(var(--MATH-PI) * 45 * 2);
+	transition: all 0.8s;
+	transition-timing-function: cubic-bezier(.64,.51,.16,.86);
+}
+.tool-list > li:hover > svg > circle.cbar {
+	stroke-width: 4px;
+	stroke: var(--color-tiffany);
+	stroke-dashoffset: calc(var(--MATH-PI) * 45 * 2 * (1 - var(--percent)));
+}
+.tool-list > li > .tl-name,
+.tool-list > li > .tl-exp {
+	position: absolute;
+	left: 50%;
+	color: var(--color-gray-dark-1);
+}
+.tool-list > li > .tl-name {
+	top: 50%;
+	font-size: 1.2rem;
+	transform: translate(-50%, -50%);
+}
+.tool-list > li > .tl-exp {	
+	top: calc(50% + 1.4rem);
+	font-size: 1rem;
+	transform: translate(-50%, -50%);
+}
+/* Interests Section */
+.outer-frame {
+	border: 1px solid var(--color-gray-dark-3);
+	border-radius: 5px;
+}
+.favor-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+}
+.favor-list > li {
+	display: flex;
+	flex: 1 0 0;
+	align-items: center;
+	justify-content: baseline;
+	flex-direction: column;
+	color: var(--profile-theme);
+	padding: 1rem 0;
+	transition: all 0.3s;
+}
+.favor-list > li > i {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	width: 50px;
+	height: 50px;
+}
+.favor-list > li:hover {
+	transform: scale(1.2);
+	color: var(--color-tiffany);
+}
+.favor-list > li > span {
+	letter-spacing: 1px;
+}
+
+@keyframes circle {
+  0% {
+    box-shadow: 0 0 0 0px rgba(51, 52, 57, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 6px rgba(51, 52, 57, 0);
+  }
+}
+
+@media (max-width: 1024px) {
+	html {
+		font-size: 90%;
+	}
+	.wrapper {
+		flex-direction: column;
+	}
+	.intro, .detail {
+		flex: 0 0 100%;
+		box-shadow: none;
+	}
+	.intro-section {
+		padding: 0 2rem;
+	}
+	.profile {
+		margin-bottom: 1rem;
+	}
+	.profile::after {
+		display: none;
+	}
+	.photo img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 80%;
+	}
+	.tool-list {
+		flex-wrap: wrap;
+	}
+	.tool-list > li {
+		flex: 0 0 33.33%;
+	}
+	.favor-list > li {
+		flex: 0 0 33.3333%;
+	}
+}
+@media (max-width: 500px) {
+	html {
+		font-size: 70%;
+	}
+} 
+</style>
+
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -37,7 +450,7 @@
         <div class="container">
             
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>  
+            <a class="navbar-brand logo-image" href="index.html" style="text-decoration: none;">Ramdas Ware</a>  
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
@@ -96,7 +509,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <h1>Terms & Conditions</h1>
+                    <h1>Curriculum Vitae</h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -109,94 +522,345 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <div class="text-box mt-5 mb-5">
-                        <p class="p-large">The app also automatically collects and receives certain information from your computer or mobile device, including the activities you perform on our Website, the Platforms, and the Applications, the type of hardware and software you are using (for example, your operating system or browser).</p>
-                    </div> <!-- end of text-box -->
+                    <div class="wrapper">
+                        <div class="intro">
+                          <div class="profile">
+                            <div class="photo">
+                              <img src="../personal website/images/ramdasware.jpg">
+                            </div>
+                            <div class="bio">
+                              <h1 class="name">Ramdas Ware</h1>
+                              <p class="profession">UX / Product / UI Designer</p>
+                            </div>
+                          </div>
+                          <div class="intro-section about">
+                            <h1 class="title">about me</h1>
+                            <p class="paragraph">
+                              Hi everyone, I am a web front-end developer, graduated from NTHU, Taiwan and my major is CS. I recently try my
+                              best to improve my skills on web front-end. My favorite thing is to observe others' portfolio.
+                            </p>
+                          </div>
+                          <div class="intro-section contact">
+                            <h1 class="title">Contact</h1>
+                            <div class="info-section">
+                              <i class="fas fa-phone"></i>
+                              <span>(+91) 9096289207</span>
+                            </div>
+                            <div class="info-section">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <span>Kharadi,Pune Maharashtra</span>
+                            </div>
+                            <div class="info-section">
+                              <i class="fas fa-paper-plane"></i>
+                              <span>ramuware@gmail.com</span>
+                            </div>
+                            
+                          </div>
 
-                    <h2 class="mb-3">1. Each time you visit the website or services</h2>
-                    <p>For example, each time you visit the Website or otherwise use the Services, we automatically collect your IP address, browser and device type, access times, the web page from which you came, the regions from which you navigate the web page , and the web page(s) you access. When you first register for a Leon account.</p>
-                    <p class="mb-5">Under no circumstances shall Leon be liable for any direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if Leon or an authorized representative has been advised of the possibility of such damages.</p>
+                          <div class="intro-section follow">
+                            <h1 class="title">Follow</h1>
+                            <div class="info-section link">
+                                <i class="fab fa-linkedin"></i>
+                                <a target="_blank" rel="author" href="https://www.linkedin.com/in/ramdas-ware-a99aab3b/">
+                                  <span>LinkedIn/ Ramdas Ware</span>
+                                </a>
+                              </div>
+                            <div class="info-section link">
+                              <i class="fab fa-behance"></i>
+                              <a target="_blank" rel="author" href="https://www.behance.net/ramuware">
+                                <span>Behance/ Ramdas Ware</span>
+                              </a>
+                            </div>
+                            <div class="info-section link">
+                              <i class="fab fa-dribbble"></i>
+                              <a target="_blank" rel="author" href="https://dribbble.com/ramuware">
+                                <span>Dribbble/ Ramdas Ware</span>
+                              </a>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="detail">
+                          <div class="detail-section edu">
+                            <div class="detail-title">
+                              <div class="title-icon">
+                                <i class="fas fa-user-graduate"></i>
+                              </div>
+                              <span>Experience</span>
+                            </div>
+                            <div class="detail-content">
+                              <div class="timeline-block">
+                                <h1>Lead UX Designer |  
+                                    <a target="_blank" rel="author" href="https://opustechglobal.com/">
+                                    <span>Opus Technologies</span>
+                                  </a>
+                                </h1>
+                                <time>02/2023 - Ongoing, Hybrid</time>
+                                <p>
+                                    <ul>
+                                        <li> I have gained in-depth insights into secured card payments, particularly while working on 
+                                            projects for TCM Bank and Paysemble. Through these experiences, I have developed a 
+                                            comprehensive understanding of how secured payment systems function within the 
+                                            banking sector× </li>
+                                        <li> Working closely with TCM Bank, I designed user-friendly, intuitive solutions that align with 
+                                            their business objectives while ensuring compliance with industry standards. Additionally, 
+                                            my work on the Paysemble project involved enhancing digital payment experiences, 
+                                            optimizing transaction flows, and improving overall usability for end users× </li>
+                                        <li>By leveraging my UX expertise, I have successfully proposed and designed solutions that 
+                                            prioritize security, accessibility, and seamless user interactions, ensuring an efficient and 
+                                            frictionless banking experience for our clients. </li>
+                                       
+                                    </ul>
+                                </p>
+                                
+                              </div>
+                              <div class="timeline-block">
+                                <h1>Senior UX / UI Designer | 
+                                    <a target="_blank" rel="author" href="https://www.nihilent.com/">
+                                        <span>Nihilent Ltd</span>
+                                      </a>
+                                </h1>
+                                <time>04/2021 - 02/2023, WFO / Remote</time>
+                                <p>
+                                    <ul>
+                                        <li>  I have contributed to various UX-driven projects, including Sapient, the Rebate Castrol 
+                                            Tool, Benchmark, and Artoreal, focusing on enhancing user experiences across eCommerce 
+                                            platforms×</li>
+                                        <li>Each project involved deep user research, wireframing, prototyping, and usability testing 
+                                            to create intuitive, efficient, and engaging interfaces. While working on Sapient, I optimized 
+                                            user flows to enhance accessibility and navigation. The Rebate Castrol Tool required a 
+                                            seamless rebate management system, where I designed an intuitive dashboard for better 
+                                            usability. Benchmark focused on data visualization, ensuring complex information was 
+                                            presented in a clear and actionable manner. Meanwhile, Artoreal involved crafting immersive 
+                                            eCommerce experiences, leveraging interaction design to enhance engagement and 
+                                            conversion rates </li>
+                                        <li>By integrating user-centered design principles, I ensured these products were not only 
+                                            aesthetically appealing but also functional, accessible, and conversion-driven, ultimately 
+                                            improving user satisfaction and business performance. </li>
+                                        
+                                    </ul>
+                                </p>
+                                
+                              </div>
+                             
+                              <div class="timeline-block">
+                                <h1>Senior UX / UI Designer | 
+                                    <a target="_blank" rel="author" href="https://www.telekom-healthcare.in/">
+                                        <span>Deutsche Telekom Clinical Solutions India Pvt. Ltd</span>
+                                      </a>
+                                </h1>
+                                <time>07/2017 - 03/2021, WFO / Remote</time>
+                                <p>
+                                    <ul>
+                                        <li>I led the UX design and conceptualization of iMedOne, a premier healthcare product in the 
+                                            healthcare domain, ensuring an intuitive and user-centric experience tailored to the needs 
+                                            of medical professionals and patients× </li>
+                                        <li>Designed for our Germany-based client, iMedOne required seamless navigation, 
+                                            accessibility, and compliance with healthcare regulations. Through close collaboration with 
+                                            stakeholders, I conducted user interviews, usability testing, and iterative prototyping to align 
+                                            the product with real-world medical workflows. My approach focused on enhancing 
+                                            efficiency, reducing cognitive load, and optimizing information architecture to deliver a 
+                                            streamlined and effective user experience </li>
+                                        <li> By prioritizing human-centered design principles, I ensured iMedOne not only met functional 
+                                            requirements but also improved usability, engagement, and overall healthcare efficiency. </li>
+                                       
+                                    </ul>
+                                </p>
+                                
+                              </div>
+                              <div class="timeline-block">
+                                <h1>UX / UI Designer |  
 
-                    <h2 class="mb-3">2. If your use of materials from this site</h2>
-                    <p>If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof should only be provided by the user of the application. Under no circumstances shall Leon be liable for any direct, indirect, special, incidental or consequential damages.</p>
-                    <p class="mb-4">All our templates inherit the GNU general public license from HTML. All .PSD & CSS files are packaged separately and are not licensed under the GPL 2.0. Instead, these files inherit Leon Personal Use License. These files are given to all Clients on a personal use basis. You may not offer them or use high quality support.</p>
-                    <ul class="list-unstyled li-space-lg mb-4">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>Modified or unmodified</strong> for redistribution or resale of any kind. You can’t use one of our themes on a HTML domain. More on HTML Vs CSS, you can read here where all the users gather to download</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>You can use our templates</strong>  do develop sites for your clients and also for a limited amount our templates inherit the GNU general public license from HTML but no more than one project per click view</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>For redistribution or resale</strong> of any kind. You can’t use one of our themes on a HTML domain. More on HTML Vs CSS, you can read here. You can use our templates do develop these types of situations</div>
-                        </li>
-                    </ul>
-                    <p class="mb-5">Services help our customers promote their products and services, marketing and advertising; engaging audiences; scheduling and publishing messages; and analyze the results are always measured better with a dedicated analytics tool You can use our templates do develop sites for your clients and also for small fee.</p>
+                                    <a target="_blank" rel="author" href="https://www.experisindia.com/">
+                                        <span>Experis IT India</span>
+                                      </a>
+                                      <a target="_blank" rel="author" href="https://www.nihilent.com/">
+                                        <span>(Contract on Nihilent Ltd.)</span>
+                                      </a>
+                                </h1>
+                                <time>11/2015 - 01/2017, WFO</time>
+                                <p>
+                                    <ul>
+                                        <li>I have designed user-centric experiences for diverse platforms, including Artoreal in 
+                                            eCommerce and Tumbhi in entertainment, focusing on enhancing usability, engagement, and 
+                                            seamless interactions× </li>
+                                        <li> For Artoreal, I crafted an intuitive and visually engaging eCommerce experience, optimizing 
+                                            product discovery, navigation, and conversion flows to enhance user engagement. My work 
+                                            involved wireframing, prototyping, and usability testing to ensure a smooth shopping 
+                                            journey× </li>
+                                        <li>In contrast, Tumbhi, an entertainment platform, required a more immersive and interactive 
+                                            UX approach. I focused on designing engaging content discovery experiences, improving 
+                                            media browsing, personalization, and user interactions to keep audiences captivated. </li>
+                                        
+                                    </ul>
+                                </p>
+                                
+                              </div>
+                              <div class="timeline-block">
+                                <h1>Senior Executive Web Designer |  
 
-                    <h2 class="mb-3">3. Designer membership and how it applies</h2>
-                    <p class="mb-5">By using any of the Services, or submitting or collecting any Personal Information via the Services, you consent to the collection, transfer, storage disclosure, and use of your Personal Information in the manner set out in this Privacy Policy. If you do not consent to the use of your Personal Information.</p>
-                    <h3>3.1. In these ways please stop using the services</h3>
-                    <p class="mb-5">Leon Landing Page uses tracking technology on the landing page, in the Applications, and in the Platforms, including mobile application identifiers and a unique Hootsuite user ID to help us recognize you across different Services, to monitor usage and web traffic routing for the Services, and to customize.</p>
-                    <h3>3.2. By visiting the app or using the services you agree</h3>
-                    <p class="mb-4">For example, each time you visit the Website or otherwise use the Services, we automatically collect your IP address, browser and device type, access times, the web page from which you came, the regions from which you navigate the web page , and the web page(s) you access. When you first register for a Leon account.</p>
-                    <ul class="list-unstyled li-space-lg mb-5">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>Cookies are small</strong> text files placed on your device when you visit a website or use the service</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>All templates</strong> in the roundup are premium which means you need to pay for them but we're talking</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>Will help authors </strong> make a living. In return you get a high quality, updated item together</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>Besides buying</strong> the template you need some basic web skills in order to customize it nothing</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body"><strong>You can always</strong> hire a web designer to help with the customization work while you provide</div>
-                        </li>
-                    </ul>
-                    
-                    <h2 class="mb-3">4. This is a landing page HTML template</h2>
-                    <p class="mb-4">Help you showcase your mobile app online and persuade visitors to download it from the app stores. The author used Bootstrap to build the template and integrated a nice animated navigation that slides from outside the screen. Features include an eye catching morphtext in the header, details lightbox and other features.</p>
-                    <ul class="list-unstyled li-space-lg mb-5">
-                        <li class="media">
-                            <strong>1.</strong>
-                            <div class="media-body"><strong>Details lightbox</strong> for more details information, statistics numbers for important values, card slider for testimonials, image slider for customer logos and working forms positioned in the right place</div>
-                        </li>
-                        <li class="media">
-                            <strong>2.</strong>
-                            <div class="media-body"><strong>Some useful extra</strong> pages are bundled with the template lik article details, terms conditions and privacy policy which can be customized as per your requirements and other user needs manifested in emails</div>
-                        </li>
-                        <li class="media">
-                            <strong>3.</strong>
-                            <div class="media-body"><strong>The app has an impactful</strong> dark style design combined with warm colors and angular background shapes with the unique goal of making your mobile app stand out from the crowd needs to see this app</div>
-                        </li>
-                        <li class="media">
-                            <strong>4.</strong>
-                            <div class="media-body"><strong>Item is an easy</strong> to customize landing page HTML template built with Bootstrap for promoting mobile apps to the online audience and making visitors download them from app stores built by the media companies</div>
-                        </li>
-                        <li class="media">
-                            <strong>5.</strong>
-                            <div class="media-body"><strong>This template</strong> is built with HTML, CSS and Bootstrap to ensure the highest flexibility for all users. All designers, developers and tech-savvy people will be able to customize and modify all required aspects</div>
-                        </li>
-                    </ul>
-                    
-                    <div class="text-box mb-5">
-                        <h3>Among the features you will find details lightbox</h3>
-                        <p>For more details information, tabbed content for feature details, video lightbox, card slider for testimonials, statistics numbers for important values, image slider for customer logos, dropdown navigation and useful extra pages for article details, terms conditions and privacy policy light design. Build an engaging online presentation for your mobile app and convince visitors to return.</p>
-                    </div> <!-- end of text-box -->
-                    <p class="mb-5">Together with touches of call to action green, the overall landing page design will showcase your app beautifully and will help with convincing visitors to download it from the app stores orange and gray hues with one color backgrounds to maximize the impact of your written and online content.</p>
-                    
-                    <a class="btn-solid-reg mb-5" href="index.html">Back</a>
+                                    <a target="_blank" rel="author" href="https://www.capita.com/">
+                                        <span>Capita India Pvt Ltd</span>
+                                      </a>
+                                </h1>
+                                <time>02/2013 - 02/2015, WFO</time>
+                                <p>
+                                    <ul>
+                                        <li> I have had the opportunity to work on Marks & Spencer’s eCommerce platform, one of the 
+                                            largest global retail websites, where I focused on enhancing user engagement and 
+                                            conversion through UX-driven design strategies </li>
+                                        <li>  As part of this team, I specialized in designing data-driven email campaigns, ensuring 
+                                            personalized, visually appealing, and mobile-friendly experiences that drive customer 
+                                            retention. Additionally, I played a key role in creating high-performing landing pages, tailored 
+                                            to specific user needs and business goals. My approach involved A/B testing, user behavior 
+                                            analysis, and responsive design principles to optimize engagement and maximize conversion 
+                                            rates</li>
+                                        <li> By integrating user experience best practices, I contributed to a seamless and impactful 
+                                            digital retail experience, ensuring consistency, accessibility, and effectiveness across all 
+                                            customer touchpoints </li>
+                                        
+                                    </ul>
+                                </p>
+                                
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="detail-section pg-skill">
+                            <div class="detail-title">
+                              <div class="title-icon">
+                                <i class="fas fa-laptop-code"></i>
+                              </div>
+                              <span>Programming skills</span>
+                            </div>
+                            <div class="detail-content">
+                              <ul class="pg-list">
+                                <li>
+                                  <span>HTML5</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 90%"></div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <span>CSS3</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 75%"></div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <span>Javascript</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 70%"></div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <span>JQuery</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 50%"></div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <span>NodeJS</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 70%"></div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <span>ReactJS</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 75%"></div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <span>VueJS</span>
+                                  <div class="sb-skeleton">
+                                    <div class="skillbar" style="--pgbar-length: 40%"></div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="detail-section tool-skill">
+                            <div class="detail-title">
+                              <div class="title-icon">
+                                <i class="fas fa-tools"></i>
+                              </div>
+                              <span>Developement Tools</span>
+                            </div>
+                            <div class="detail-content">
+                              <ul class="tool-list">
+                                <li>
+                                  <svg viewbox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45"></circle>
+                                    <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.6"></circle>
+                                  </svg>
+                                  <span class="tl-name">Photoshop</span>
+                                  <span class="tl-exp">60%</span>
+                                </li>
+                                <li>
+                                  <svg viewbox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45"></circle>
+                                    <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+                                  </svg>
+                                  <span class="tl-name">Sublime</span>
+                                  <span class="tl-exp">80%</span>
+                                </li>
+                                <li>
+                                  <svg viewbox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45"></circle>
+                                    <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.7"></circle>
+                                  </svg>
+                                  <span class="tl-name">Git</span>
+                                  <span class="tl-exp">70%</span>
+                                </li>
+                                <li>
+                                  <svg viewbox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45"></circle>
+                                    <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.74"></circle>
+                                  </svg>
+                                  <span class="tl-name">NPM</span>
+                                  <span class="tl-exp">74%</span>
+                                </li>
+                              </ul>
+                            </div>
+                      
+                          </div>
+                          <div class="detail-section interests">
+                            <div class="detail-title">
+                              <div class="title-icon">
+                                <i class="fas fa-heart"></i>
+                              </div>
+                              <span>Interests</span>
+                            </div>
+                            <div class="detail-content">
+                              <div class="outer-frame">
+                                <ul class="favor-list">
+                                  <li>
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Game</span>
+                                  </li>
+                                  <li>
+                                    <i class="fas fa-paw"></i>
+                                    <span>Pet</span>
+                                  </li>
+                                  <li>
+                                    <i class="far fa-headphones-alt"></i>
+                                    <span>Music</span>
+                                  </li>
+                                  <li>
+                                    <i class="fas fa-book-spells"></i>
+                                    <span>Self-learning</span>
+                                  </li>
+                                  <li>
+                                    <i class="fas fa-user-edit"></i>
+                                    <span>Blog</span>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
